@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :product do
-    manufacturer_id    { rand(1..5) }
+    manufacturer
     title       { Faker::Lorem.word.camelcase }
     img         { 'p-1.png' }
     content     { Faker::Lorem.sentence(word_count: 10) }
@@ -11,6 +11,5 @@ FactoryBot.define do
     old_price   { rand(10..500) }
     status      { 1 }
     hit         { 1 }
-
   end
 end

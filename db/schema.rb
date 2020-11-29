@@ -10,9 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_11_29_195635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "manufacturers", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "img"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.string "img", default: "image.png"
+    t.string "content"
+    t.string "keywords"
+    t.string "description"
+    t.float "price"
+    t.float "old_price"
+    t.integer "status"
+    t.integer "hit", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "manufacturer_id"
+    t.index ["manufacturer_id"], name: "index_products_on_manufacturer_id"
+  end
+
+  add_foreign_key "products", "manufacturers"
 end

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MainController, type: :controller do
   describe "GET #index" do
       let(:manufacturers) { create_list :manufacturer, 3 }
-      let(:products) { create_list :product, 8 }
+      let(:products) { create_list :product, 2 }
 
       before { get :index }
 
@@ -13,11 +13,11 @@ RSpec.describe MainController, type: :controller do
         end
 
         it "instance var manufacturers include only manufacturers" do
-          expect(assigns(key :manufacturers)).to match_array(manufacturers)
+          expect(assigns(:manufacturers)).to match_array(manufacturers)
         end
 
         it "instance products include only products" do
-          expect(assigns(key :products)).to match_array(products)
+          expect(assigns(:products)).to match_array(products)
 
         end
       end
