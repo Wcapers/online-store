@@ -2,6 +2,7 @@ FactoryBot.define do
 
   factory :product do
     manufacturer
+    category
     title       { Faker::Lorem.word.camelcase }
     img         { 'p-1.png' }
     content     { Faker::Lorem.sentence(word_count: 10) }
