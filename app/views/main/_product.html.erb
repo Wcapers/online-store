@@ -9,7 +9,14 @@
       <p class="card-text"><%= product.description %></p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Order</small>
+    <%=
+      link_to 'ADD TO CART',
+              cart_items_path,
+              remote: true,
+              data:      { method: :post , id: product.id },
+              class:    "add-cart item_add add-to-cart-link",
+              id:       "productAdd"
+    %>
     </div>
   </div>
 </div>
