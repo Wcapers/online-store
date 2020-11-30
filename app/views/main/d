@@ -1,0 +1,9 @@
+<div class="carousel-item active">
+  <%= image_tag('dna.jpg', size: '900x350', alt: 'First slide')  %>
+</div>
+<div class="carousel-item">
+  <%= image_tag('world.png', size: '900x350', alt: 'First slide') %>
+</div>
+<div class="carousel-item">
+  <%= image_tag('virus.jpg', size: '900x350', alt: 'First slide') %>
+</div>
